@@ -24,15 +24,15 @@ share healthy habits through exercise
 
 `$ npm i`
 
-- In the `/server` of the app
+- In the `/backend` of the app
 
-`$ cd server && npm i`
+`$ cd backend && npm i`
 
-- In the client of the app
+- In the frontend of the app
 
 `$ cd ../` (go back to root of your app)
 
-`$ cd client && npm i`
+`$ cd frontend && npm i`
 
 ## variables.env
 
