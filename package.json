@@ -1,0 +1,32 @@
+{
+  "name": "flexit",
+  "version": "1.0.0",
+  "description": "Exercise App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingluddite/flexit.git"
+  },
+  "author": "peh2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kingluddite/flexit/issues"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.12.0",
+    "eslint-config-react-app": "^3.0.6",
+    "eslint-plugin-flowtype": "^3.2.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^2.6.2",
+    "husky": "^0.14.3",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.14.2",
+    "pretty-quick": "^1.6.0"
+  },
+  "homepage": "https://github.com/kingluddite/flexit#readme"
+}
