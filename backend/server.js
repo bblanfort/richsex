@@ -2,6 +2,10 @@ const express = require('express'); // did double quotes change after saving?
 const mongoose = require('mongoose');
 require('dotenv').config({ path: './variables.env' });
 
+models;
+const Nails = require('./models/Nails');
+const User = require('./models/User');
+
 const PORT = process.env.PORT || 4444;
 
 mongoose
