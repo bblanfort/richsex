@@ -1,22 +1,22 @@
 exports.resolvers = {
   Query: {
-    getAllExercises: () => {},
+    getAllNail: () => {},
   },
   Mutation: {
-    addExercise: async (
+    addNail: async (
       root,
-      { exerciseName, bodyPartCategory, typeCategory, description, username },
-      { Cologne }
+      { nailName, nailCategory, typeCategory, description, username },
+      { Nail }
     ) => {
-      const newExercise = await new Exercise({
-        exerciseName,
-        bodyPartCategory,
+      const newNail = await new Nail({
+        nailName,
+        nailCategory,
         typeCategory,
         description,
         username,
       }).save();
 
-      return newExercise;
+      return newNail;
     },
   },
 };
