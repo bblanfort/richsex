@@ -1,5 +1,6 @@
 exports.typeDefs = `
 type Nail {
+  _id: ID,
   nailName: String!
   nailCategory: String!
   description: String!
@@ -7,7 +8,9 @@ type Nail {
   likes: Int
   username: String
 }
+
 type User {
+  _id: ID,
   username: String!
   password: String!
   email: String!

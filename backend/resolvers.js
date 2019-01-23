@@ -1,6 +1,9 @@
 exports.resolvers = {
   Query: {
-    getAllNails: () => {},
+    getAllNails: async (root, args, { Nail }) => {
+      const allNails = await Nail.find();
+      return allNails;
+    },
   },
 
   Mutation: {
