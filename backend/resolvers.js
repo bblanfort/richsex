@@ -1,7 +1,8 @@
 exports.resolvers = {
   Query: {
-    getAllNail: () => {},
+    getAllNails: () => {},
   },
+
   Mutation: {
     addNail: async (
       root,

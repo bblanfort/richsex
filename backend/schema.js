@@ -14,9 +14,11 @@ type User {
   joinDate: String
   favorites: [Nail]
 }
+
 type Query {
-  getAllNail: [Nail]
+  getAllNails: [Nail]
 }
+
 type Mutation {
  addNail(nailName: String!, 
  nailCategory: String!, 
