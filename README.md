@@ -1,3 +1,6 @@
+## Notes
+*
+
 ## Last class Summary
 
 - We still worked on server
