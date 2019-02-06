@@ -5,6 +5,6 @@ const UserSchema = new Schema({
   password: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   joinDate: { type: Date, default: Date.now },
-  favorites: { type: [Schema.Types.ObjectId], ref: 'Exercise' },
+  favorites: { type: [Schema.Types.ObjectId], ref: 'Nail' },
 });
 module.exports = mongoose.model('User', UserSchema);

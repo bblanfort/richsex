@@ -22,10 +22,16 @@ type Query {
   getAllNails: [Nail]
 }
 
+type Token {
+  token: String!
+}
+
 type Mutation {
  addNail(nailName: String!, 
  nailCategory: String!, 
  description: String!, 
  username: String): Nail
+ 
+ signupUser(username: String!, email: String!, password: String!): Token
 }
 `;
