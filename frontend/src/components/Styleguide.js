@@ -6,7 +6,7 @@ import pic08 from '../assets/images/pic08.jpg';
 import pic09 from '../assets/images/pic09.jpg';
 import pic10 from '../assets/images/pic10.jpg';
 
-export class Styleguide extends Component {
+class Styleguide extends Component {
   render() {
     return (
       <div id="main" className="alt">
