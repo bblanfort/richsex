@@ -10,7 +10,7 @@ class Signup extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-    console.log(name, ':', value);
+    // console.log(name, ':', value);
   };
 
   render() {
