@@ -20,8 +20,8 @@ import Footer from './components/Footer';
 import Test from './components/Test';
 
 const client = new ApolloClient({
-  // uri: 'http://localhost:4444/graphql',
-  uri: 'https://flexercise.herokuapp.com/graphql',
+  uri: 'http://localhost:4444/graphql',
+  // uri: 'https://flexercise.herokuapp.com/graphql',
   fetchOptions: {
     credentials: 'include',
   },

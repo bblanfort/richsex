@@ -18,14 +18,22 @@ class Signup extends Component {
     });
   };
 
+  handleSubmit = (event, signupUser) => {
+    event.preventDefault();
+    signupUser().then(({ data }) => {
+      console.log(data);
+      // this.clearState();
+    });
+  };
+
   render() {
     const { username, email, password, passwordConfirmation } = this.state;
     return (
       <div className="App">
         <h2 className="App">Signup</h2>
-        <Mutation mutation={SIGNUP_USER}>
-          {() => (
-            <form className="form">
+        <Mutation mutation={SIGNUP_USER} variables={{ username, email, password }}>
+          {(signupUser, { data, loading, error }) => (
+            <form className="form" onSubmit={event => this.handleSubmit(event, signupUser)}>
               <label htmlFor="username">
                 Username
                 <input
@@ -71,7 +79,7 @@ class Signup extends Component {
                 />
               </label>
               <div>
-                <button type="button" className="button-primary">
+                <button type="submit" className="button-primary">
                   Signup
                 </button>
               </div>
