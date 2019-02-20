@@ -32,6 +32,8 @@ type Mutation {
  description: String!, 
  username: String): Nail
  
- signupUser(username: String!, email: String!, password: String!): Token
+ 
+ signinUser(username: String!, password: String!): Token
+  signupUser(username: String!, email: String!, password: String!): Token
 }
 `;
