@@ -33,6 +33,8 @@ class Signin extends Component {
     event.preventDefault();
     signinUser().then(({ data }) => {
       // console.log(data);
+      // console.log(data.data.signinUser.token);
+      localStorage.setItem('token', data.signinUser.token);
       this.clearState();
     });
   };

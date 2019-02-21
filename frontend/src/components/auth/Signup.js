@@ -35,6 +35,8 @@ class Signup extends Component {
     event.preventDefault();
     signupUser().then(({ data }) => {
       // console.log(data);
+      // console.log(data.signupUser.token);
+      localStorage.setItem('token', data.signupUser.token);
       this.clearState();
     });
   };

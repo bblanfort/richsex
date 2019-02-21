@@ -24,6 +24,19 @@ const client = new ApolloClient({
   fetchOptions: {
     credentials: 'include',
   },
+  request: operation => {
+    const token = localStorage.getItem('token');
+    operation.setContext({
+      headers: {
+        authorization: token,
+      },
+    });
+  },
+  onError: ({ networkError }) => {
+    if (networkError) {
+      console.log('Network Error', networkError);
+    }
+  },
 });
 
 const Root = () => (
