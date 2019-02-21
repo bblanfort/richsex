@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 
 // Nail Queries
-export const GET_ALL_NAILS = gql`
+export const GET_ALL_NAILS_QUERY = gql`
   query GET_ALL_NAILS {
     getAllNails {
       nailName
@@ -17,8 +17,16 @@ export const GET_ALL_NAILS = gql`
 // User Queries
 
 // User Mutations
-export const SIGNUP_USER = gql`
-  mutation SIGNUP_USER($username: String!, $email: String!, $password: String!) {
+export const SIGNIN_USER_MUTATION = gql`
+  mutation SIGNIN_USER_MUTATION($username: String!, $password: String!) {
+    signinUser(username: $username, password: $password) {
+      token
+    }
+  }
+`;
+
+export const SIGNUP_USER_MUTATION = gql`
+  mutation SIGNUP_USER_MUTATION($username: String!, $email: String!, $password: String!) {
     signupUser(username: $username, email: $email, password: $password) {
       token
     }

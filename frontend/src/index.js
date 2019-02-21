@@ -17,7 +17,6 @@ import Signin from './components/auth/Signin';
 import Signup from './components/auth/Signup';
 import Styleguide from './components/Styleguide';
 import Footer from './components/Footer';
-import Test from './components/Test';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4444/graphql',
@@ -38,7 +37,6 @@ const Root = () => (
         <Route path="/signup" component={Signup} />
         <Route path="/landing" component={Landing} />
         <Route path="/styleguide" component={Styleguide} />
-        <Route path="/Test" component={Test} />
         <Redirect to="/" />
       </Switch>
       <Footer />

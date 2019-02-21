@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export class Navbar extends Component {
   render() {
@@ -14,8 +14,8 @@ export class Navbar extends Component {
           <li>Logout</li>
         </ul>
       </nav>
-    )
+    );
   }
 }
 
-export default Navbar
+export default Navbar;

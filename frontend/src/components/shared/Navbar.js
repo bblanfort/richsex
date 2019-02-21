@@ -1,12 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-const Navbar = () => {
-  return (
-    <nav>
-      <NavbarUnAuth />
-    </nav>
-  );
-};
+
+const Navbar = () => (
+  <nav>
+    <NavbarUnAuth />
+  </nav>
+);
 
 const NavbarUnAuth = () => (
   <ul className="navbar">
@@ -16,9 +15,6 @@ const NavbarUnAuth = () => (
       </NavLink>
     </li>
     <li>
-      <NavLink to="Test">Test</NavLink>
-    </li>  
-    <li>
       <NavLink to="/search">Search</NavLink>
     </li>
     <li>
@@ -27,11 +23,7 @@ const NavbarUnAuth = () => (
     <li>
       <NavLink to="/signup">Signup</NavLink>
     </li>
-    <li>
-      <NavLink to="/test">Test</NavLink>
-    </li>
   </ul>
 );
 
 export default Navbar;
-
