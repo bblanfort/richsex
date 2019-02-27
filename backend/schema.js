@@ -20,6 +20,7 @@ type User {
 
 type Query {
   getAllNails: [Nail]
+  getCurrentUser: User
 }
 
 type Token {

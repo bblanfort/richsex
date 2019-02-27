@@ -15,6 +15,15 @@ export const GET_ALL_NAILS_QUERY = gql`
 // Nail Mutations
 
 // User Queries
+export const GET_CURRENT_USER_QUERY = gql`
+  query GET_CURRENT_USER_QUERY {
+    getCurrentUser {
+      username
+      email
+      joinDate
+    }
+  }
+`;
 
 // User Mutations
 export const SIGNIN_USER_MUTATION = gql`

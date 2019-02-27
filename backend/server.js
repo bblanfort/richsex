@@ -56,7 +56,7 @@ app.use(async (req, res, next) => {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => ({ Nail, User }),
+  context: ({ req }) => ({ Nail, User, currentUser: req.currentUser }),
 });
 
 server.applyMiddleware({ app });

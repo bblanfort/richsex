@@ -6,6 +6,8 @@ export class Navbar extends Component {
       <nav>
         <ul className="navbar">
           <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
           <li>Signin</li>
           <li>Signup</li>
           <li className="search">

@@ -5,6 +5,8 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
+import withSession from './components/withSession';
+
 // styles
 import './assets/scss/main.scss';
 
@@ -45,6 +47,8 @@ const Root = () => (
       <Navbar />
       <Switch>
         <Route path="/" exact component={App} />
+        <Route path="/about" exact component={App} />
+        <Route path="/contact" exact component={App} />
         <Route path="/search" component={Search} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
@@ -57,9 +61,11 @@ const Root = () => (
   </Router>
 );
 
+const RootWithSession = withSession(Root);
+
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Root />
+    <RootWithSession />
   </ApolloProvider>,
   document.getElementById('root')
 );
