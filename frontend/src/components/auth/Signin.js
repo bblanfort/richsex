@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
+import PropTypes from 'prop-types';
 import { SIGNIN_USER_MUTATION } from '../../queries/index';
 
 // custom components
@@ -11,6 +13,10 @@ const initialState = {
 };
 
 class Signin extends Component {
+  static propTypes = {
+    history: PropTypes.object.isRequired,
+  };
+
   state = {
     ...initialState,
   };
@@ -30,12 +36,14 @@ class Signin extends Component {
   };
 
   handleSubmit = (event, signinUser) => {
+    const { history } = this.props;
     event.preventDefault();
     signinUser().then(({ data }) => {
       // console.log(data);
       // console.log(data.data.signinUser.token);
       localStorage.setItem('token', data.signinUser.token);
       this.clearState();
+      history.push('/');
     });
   };
 
@@ -94,4 +102,4 @@ class Signin extends Component {
   }
 }
 
-export default Signin;
+export default withRouter(Signin);

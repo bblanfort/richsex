@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { SIGNUP_USER_MUTATION } from '../../queries/index';
 
 // custom components
@@ -13,6 +15,10 @@ const initialState = {
 };
 
 class Signup extends Component {
+  static propTypes = {
+    history: PropTypes.object.isRequired,
+  };
+
   state = {
     ...initialState,
   };
@@ -32,12 +38,14 @@ class Signup extends Component {
   };
 
   handleSubmit = (event, signupUser) => {
+    const { history } = this.props;
     event.preventDefault();
     signupUser().then(({ data }) => {
       // console.log(data);
       // console.log(data.signupUser.token);
       localStorage.setItem('token', data.signupUser.token);
       this.clearState();
+      history.push('/');
     });
   };
 
@@ -118,4 +126,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default withRouter(Signup);
