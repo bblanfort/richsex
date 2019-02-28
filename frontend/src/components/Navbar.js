@@ -1,23 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+const Navbar = ({ session }) => {
+  return (
+    <nav>
+      {session && session.getCurrentUser ? <NavbarAuth /> : <NavbarUnauth />}
+    </nav>
+  );
+};
 
-export class Navbar extends Component {
-  render() {
-    return (
-      <nav>
-        <ul className="navbar">
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Signin</li>
-          <li>Signup</li>
-          <li className="search">
-            <input type="text" className="search-input" placeholder="Search" />
-          </li>
-          <li>Logout</li>
-        </ul>
-      </nav>
-    );
-  }
-}
+const NavbarUnauth = () => (
+  <ul>
+    <li>
+      <NavLink to="/" exact>
+        Home
+      </NavLink>
+    </li>
+    <li>
+      <NavLink to="/search">Search</NavLink>
+    </li>
+    <li>
+      <NavLink to="/signin">Signin</NavLink>
+    </li>
+    <li>
+      <NavLink to="/signup">Signup</NavLink>
+    </li>
+  </ul>
+);
+
+const NavbarAuth = () => (
+  <ul>
+    <li>
+      <NavLink to="/" exact>
+        Home
+      </NavLink>
+    </li>
+    <li>
+      <NavLink to="/search">Search</NavLink>
+    </li>
+    <li>
+      <NavLink to="/cologne/add">Add Cologne</NavLink>
+    </li>
+    <li>
+      <NavLink to="/profile">Profile</NavLink>
+    </li>
+    <li>
+      <button>Signout</button>
+    </li>
+  </ul>
+);
 
 export default Navbar;
+```
