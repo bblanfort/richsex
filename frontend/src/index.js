@@ -10,7 +10,8 @@ import withSession from './components/withSession';
 // styles
 import './assets/scss/main.scss';
 
-// custom components
+// custom public components
+// custom public components
 import Navbar from './components/shared/Navbar';
 import Search from './components/nail/Search';
 import App from './components/App';
@@ -21,6 +22,9 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Styleguide from './components/Styleguide';
 import Footer from './components/Footer';
+// custom private components
+import AddNail from './components/nail/AddNail';
+import Profile from './components/profile/Profile';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4444/graphql',
@@ -56,6 +60,8 @@ const Root = ({ refetch, session }) => (
         <Route path="/signup" render={() => <Signup refetch={refetch} />} />
         <Route path="/landing" component={Landing} />
         <Route path="/styleguide" component={Styleguide} />
+        <Route path="/nail/add" component={AddNail} />
+        <Route path="/profile" component={Profile} />
         <Redirect to="/" />
       </Switch>
       <Footer />
