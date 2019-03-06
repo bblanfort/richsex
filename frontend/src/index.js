@@ -12,7 +12,7 @@ import './assets/scss/main.scss';
 
 // custom components
 import Navbar from './components/shared/Navbar';
-import Search from './components/exercise/Search';
+import Search from './components/nail/Search';
 import App from './components/App';
 import Landing from './components/Landing';
 import Signin from './components/auth/Signin';
