@@ -1,6 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// custom components
+import Signout from '../auth/Signout';
+
 const NavbarAuth = ({ session }) => (
   <>
     <ul>
@@ -19,11 +22,17 @@ const NavbarAuth = ({ session }) => (
         <NavLink to="/profile">Profile</NavLink>
       </li>
       <li>
-        <button>Signout</button>
+        <NavLink to="/about">About</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact">Contact</NavLink>
+      </li>
+      <li>
+        <Signout />
       </li>
     </ul>
     <h4>
-      Welcome, <strong>{session.getCurrentUser.username}</strong>
+      Welcome <strong>{session.getCurrentUser.username}</strong>
     </h4>
   </>
 );
