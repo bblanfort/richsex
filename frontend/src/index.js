@@ -17,6 +17,8 @@ import App from './components/App';
 import Landing from './components/Landing';
 import Signin from './components/auth/Signin';
 import Signup from './components/auth/Signup';
+import About from './components/About';
+import Contact from './components/Contact';
 import Styleguide from './components/Styleguide';
 import Footer from './components/Footer';
 
@@ -47,8 +49,8 @@ const Root = ({ refetch, session }) => (
       <Navbar session={session} />
       <Switch>
         <Route path="/" exact component={App} />
-        {/* <Route path="/about" exact component={About} />
-        <Route path="/contact" exact component={Contact} /> */}
+        <Route path="/about" exact component={About} />
+        <Route path="/contact" exact component={Contact} />
         <Route path="/search" component={Search} />
         <Route path="/signin" render={() => <Signin refetch={refetch} />} />
         <Route path="/signup" render={() => <Signup refetch={refetch} />} />
@@ -58,7 +60,7 @@ const Root = ({ refetch, session }) => (
       </Switch>
       <Footer />
     </div>
-  </Router >
+  </Router>
 );
 
 const RootWithSession = withSession(Root);
