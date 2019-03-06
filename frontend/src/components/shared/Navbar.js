@@ -1,58 +1,22 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { Component } from 'react';
 
 // styles
-import './Navbar.css';
+// import './Navbar.css';
 
-const Navbar = ({ session }) => (
-  <nav>{session && session.getCurrentUser ? <NavbarAuth /> : <NavbarUnauth />}</nav>
-);
+// custom components
+import NavbarAuth from './NavbarAuth';
+import NavbarUnauth from './NavbarUnauth';
 
-const NavbarUnauth = () => (
-  <ul>
-    <li>
-      <NavLink to="/" exact>
-        Home
-      </NavLink>
-    </li>
-    <li>
-      <NavLink to="/search">Search</NavLink>
-    </li>
-    <li>
-      <NavLink to="/signin">Signin</NavLink>
-    </li>
-    <li>
-      <NavLink to="/signup">Signup</NavLink>
-    </li>
-    <li>
-      <NavLink to="/about">About</NavLink>
-    </li>
-    <li>
-      <NavLink to="/contact">Contact</NavLink>
-    </li>
-  </ul>
-);
+class Navbar extends Component {
+  render() {
+    const { session } = this.props;
 
-const NavbarAuth = () => (
-  <ul>
-    <li>
-      <NavLink to="/" exact>
-        Home
-      </NavLink>
-    </li>
-    <li>
-      <NavLink to="/search">Search</NavLink>
-    </li>
-    <li>
-      <NavLink to="/cologne/add">Add Cologne</NavLink>
-    </li>
-    <li>
-      <NavLink to="/profile">Profile</NavLink>
-    </li>
-    <li>
-      <button>Signout</button>
-    </li>
-  </ul>
-);
+    return (
+      <nav>
+        {session && session.getCurrentUser ? <NavbarAuth session={session} /> : <NavbarUnauth />}
+      </nav>
+    );
+  }
+}
 
 export default Navbar;
