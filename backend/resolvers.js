@@ -1,12 +1,44 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
+const { GraphQLScalarType } = require('graphql');
+const { Kind } = require('graphql/language');
+const { ObjectID } = require('mongoose').mongo.ObjectID;
+
 const createToken = (user, secret, expiresIn) => {
   const { username, email } = user;
   return jwt.sign({ username, email }, secret, { expiresIn });
 };
 
 exports.resolvers = {
+  ObjectID: new GraphQLScalarType({
+    name: 'ObjectID',
+    description:
+      'The `ObjectID` scalar type represents a [`BSON`](https://en.wikipedia.BSON) commonly used in `mongodb`',
+    serialize(_id) {
+      if (_id instanceof ObjectID) {
+        return _id.toHexString();
+      }
+      if (typeof _id === 'string') {
+        return _id;
+      }
+      throw new Error(
+        `${Object.getPrototypeOf(_id).constructor.name} not convertible to `
+      );
+    },
+    parseValue(_id) {
+      if (typeof _id === 'string') {
+        return ObjectID.createFromHexString(_id);
+      }
+      throw new Error(`${typeof _id} not convertible to ObjectID`);
+    },
+    parseLiteral(ast) {
+      if (ast.kind === Kind.STRING) {
+        return ObjectID.createFromHexString(ast.value);
+      }
+      throw new Error(`${ast.kind} not convertible to ObjectID`);
+    },
+  }),
   Query: {
     getAllNails: async (root, args, { Nail }) => {
       const allNails = await Nail.find();

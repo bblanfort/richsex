@@ -4,6 +4,7 @@ import { gql } from 'apollo-boost';
 export const GET_ALL_NAILS_QUERY = gql`
   query GET_ALL_NAILS {
     getAllNails {
+      _id
       nailName
       description
       likes

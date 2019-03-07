@@ -1,6 +1,7 @@
 exports.typeDefs = `
+scalar ObjectID
 type Nail {
-  _id: ID,
+  _id: ID: ObjectID
   nailName: String!
   nailCategory: String!
   description: String!
@@ -10,7 +11,7 @@ type Nail {
 }
 
 type User {
-  _id: ID,
+  _id: ID: ObjectID
   username: String!
   password: String!
   email: String!
